@@ -1,19 +1,43 @@
-#IDEA
-.idea
+# === IDEs e Editores ===
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
 
-# Compiled class file
-*.class
+# VS Code
+.vscode/
 
-# Log file
-*.log
+# NetBeans & STS
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# BlueJ files
+# BlueJ e J2ME
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# === Arquivos do Sistema e Ambiente ===
+.env
+*.log
+
+# === Arquivos de Build e Compilação (Padrão Monorepo) ===
+# O '**/' garante que vai ignorar em qualquer subpasta de microsserviço
+**/target/
+**/build/
+*.class
+
+# === Pacotes ===
 *.jar
 *.war
 *.nar
@@ -22,9 +46,12 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# === Maven Wrapper ===
+.mvn/wrapper/maven-wrapper.jar
+
+# === Documentação Inútil do Initializr ===
+HELP.md
+
+# === Logs de Crash da JVM ===
 hs_err_pid*
 replay_pid*
-
-#ENV
-.env
