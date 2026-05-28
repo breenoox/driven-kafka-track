@@ -1,0 +1,31 @@
+name: CI - Car Simulator
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ 'car-simulator/**' ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    defaults:
+      run:
+        working-directory: ./car-simulator
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar e Testar (Build & Test)
+        run: mvn clean package
