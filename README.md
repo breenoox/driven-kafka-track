@@ -40,8 +40,8 @@ Abaixo estão as principais ferramentas e frameworks que compõem a arquitetura 
 
 O repositório é organizado no formato Monorepo e atualmente está dividido em:
 
-* **`car-simulator` (Em andamento 🛠️):** Responsável por gerar dados fictícios de telemetria dos carros (Velocidade, KM) e produzir eventos para o Kafka com chaves por veículo.
-* **`billing-processor` (Planejado 🗓️):** Consumidor que processará a quilometragem e fará o cálculo financeiro das faturas no banco.
+- **`car-simulator` (Finalizado ✅):** Responsável por gerar dados fictícios de telemetria dos carros (velocidade, KM) e produzir eventos para o Kafka com chaves por veículo.
+* **`billing-processor` (Em andamento 🛠️):** Consumidor que processará a quilometragem e fará o cálculo financeiro das faturas no banco.
 * **`alert-stream` (Planejado 🗓️):** Processador em tempo real utilizando Kafka Streams para disparar alertas de alta velocidade.
 
 ---
