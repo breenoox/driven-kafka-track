@@ -29,7 +29,7 @@ public class GenerateTelemtryUseCase {
                 vehicle.getCarId(),
                 vehicle.getCurrentSpeed(),
                 vehicle.getTotalMileage(),
-                Instant.now()
+                Instant.now().toString()
             );
 
             publisher.publish(telemetry);

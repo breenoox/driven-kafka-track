@@ -7,5 +7,5 @@ public record TelemetryDTO(
         UUID carId,
         int speed,
         double totalKm,
-        Instant timestamp
+        String timestamp
 ) { }
