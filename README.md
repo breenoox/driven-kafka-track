@@ -1,7 +1,7 @@
 # 🏎️ driven-kafka-track
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Em%20Constru%C3%A7%C3%A3o-orange?style=for-the-badge&logo=github" alt="Status Em Construção">
+  <img src="https://img.shields.io/badge/Status-Concluído-green?style=for-the-badge&logo=github" alt="Concluído">
 </p>
 
 ---
@@ -42,7 +42,6 @@ O repositório é organizado no formato Monorepo e atualmente está dividido em:
 
 - **`car-simulator` (Finalizado ✅):** Responsável por gerar dados fictícios de telemetria dos carros (velocidade, KM) e produzir eventos para o Kafka com chaves por veículo.
 * **`billing-processor` (Finalizado ✅):** Consumidor que processa a quilometragem e faz o cálculo financeiro das faturas no banco.
-* **`alert-stream` (Planejado 🗓️):** Processador em tempo real utilizando Kafka Streams para disparar alertas de alta velocidade.
 
 ---
 
