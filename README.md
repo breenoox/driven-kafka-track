@@ -1,7 +1,7 @@
 # 🏎️ driven-kafka-track
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Em%20Constru%C3%A7%C3%A3o-orange?style=for-the-badge&logo=github" alt="Status Em Construção">
+  <img src="https://img.shields.io/badge/Status-Concluído-green?style=for-the-badge&logo=github" alt="Concluído">
 </p>
 
 ---
@@ -42,7 +42,62 @@ O repositório é organizado no formato Monorepo e atualmente está dividido em:
 
 - **`car-simulator` (Finalizado ✅):** Responsável por gerar dados fictícios de telemetria dos carros (velocidade, KM) e produzir eventos para o Kafka com chaves por veículo.
 * **`billing-processor` (Finalizado ✅):** Consumidor que processa a quilometragem e faz o cálculo financeiro das faturas no banco.
-* **`alert-stream` (Planejado 🗓️):** Processador em tempo real utilizando Kafka Streams para disparar alertas de alta velocidade.
+
+---
+
+## 🔌 Mapeamento de Portas
+
+Para facilitar o desenvolvimento e evitar conflitos na sua máquina local, a arquitetura utiliza as seguintes portas:
+
+| Serviço | Porta | Descrição |
+| :--- | :--- | :--- |
+| **Apache Kafka** | `9092` | Porta exposta para comunicação das aplicações Spring Boot com o broker. |
+| **Kafka UI** | `8080` | Interface visual do Kafka. Acesse via `http://localhost:8080`. |
+| **PostgreSQL** | `5432` | Porta padrão do banco de dados, utilizada pelo `billing-processor`. |
+| **car-simulator** | `8081` | Porta do microsserviço simulador de telemetria. |
+| **billing-processor** | `8082` | Porta do microsserviço responsável pelo faturamento. |
+
+---
+
+## Guia de implantação
+
+Antes de iniciar o projeto, certifique-se de ter o [Docker](https://www.docker.com/) e o [Git](https://git-scm.com/) instalados.
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/breenoox/driven-kafka-track.git
+```
+
+Suba toda a stack em segundo plano:
+
+```bash
+docker compose up -d --build
+```
+
+Aguarde alguns segundos e verifique se todos os containers estão saudáveis:
+
+```bash
+docker compose ps
+```
+
+Para parar e remover os containers (mantendo os volumes):
+
+```bash
+docker compose down
+```
+
+Para parar e apagar **também os dados** dos bancos:
+
+```bash
+docker compose down -v
+```
+
+Com a stack no ar, acesse o painel do Kafka UI pelo seu navegador para visualizar o tópico car-telemetry e acompanhar o fluxo de mensagens:
+
+```bash
+http://localhost:8080
+```
 
 ---
 
